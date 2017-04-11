@@ -1,7 +1,8 @@
+#Hyderabad Global Azure Bootcamp 2017
 
-##Run the application with follwing commands
+##Run the application with following commands
  
-one time task
+First time install the glup globally
 
 ```bash
 npm install gulp-cli -g
