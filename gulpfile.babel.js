@@ -8,6 +8,8 @@ import useref from 'gulp-useref';
 import gulpIf from 'gulp-if';
 import cssnano from 'gulp-cssnano';
 import runSequence from 'run-sequence';
+import htmlmin from 'gulp-htmlmin';
+
 var browserSync = require('browser-sync').create();
 
 gulp.task('clean', () => {
@@ -35,6 +37,7 @@ gulp.task('useref', () => {
   return gulp.src('*.html')
     .pipe(useref())
     .pipe(gulpIf('*.css', cssnano()))
+    .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
     .pipe(gulp.dest('docs'));
 });
 
@@ -43,7 +46,6 @@ gulp.task('copy', () => {
   gulp.src('fonts/**/*.*', {dot: true}).pipe(gulp.dest('docs/fonts'));
   gulp.src('img/**/*.*', {dot: true}).pipe(gulp.dest('docs/img'));
   gulp.src('js/**/*.*', {dot: true}).pipe(gulp.dest('docs/js'));
-  // gulp.src('./*.html', {dot: true}).pipe(gulp.dest('docs/'));
 });
 
 gulp.task('watch', () => {

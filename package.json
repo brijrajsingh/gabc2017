@@ -20,6 +20,7 @@
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.1",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.0",
     "gulp-less": "^3.0.5",
     "gulp-useref": "^3.0.8",
